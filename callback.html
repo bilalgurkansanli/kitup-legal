@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KitUp — TikTok OAuth Callback</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem;
-      color: #1a1a1a;
-      background: #fafafa;
-    }
-    h1 { font-size: 1.5rem; }
-    .box {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 1rem 0;
-      word-break: break-all;
-    }
-    code {
-      display: block;
-      background: #f0f0f0;
-      padding: 0.75rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-    }
-    .error { color: #b00020; }
-    .ok { color: #1e5a94; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>TikTok OAuth Callback</h1>
-  <p id="status">Reading authorization response...</p>
-  <div id="code-box" class="box" style="display:none;">
-    <strong>Authorization code</strong>
-    <code id="auth-code"></code>
-    <p class="ok">Copy this code and paste it into <code>python scripts/tiktok_oauth.py</code> on your computer.</p>
-  </div>
-  <div id="error-box" class="box error" style="display:none;">
-    <strong>Error</strong>
-    <code id="error-text"></code>
-  </div>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get("code");
-    const error = params.get("error");
-    const status = document.getElementById("status");
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="logo" href="index.html">KitUp</a>
+      <nav class="nav-legal" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
 
-    if (error) {
-      status.textContent = "Authorization failed.";
-      document.getElementById("error-box").style.display = "block";
-      document.getElementById("error-text").textContent =
-        error + (params.get("error_description") ? ": " + params.get("error_description") : "");
-    } else if (code) {
-      status.textContent = "Authorization successful.";
-      document.getElementById("code-box").style.display = "block";
-      document.getElementById("auth-code").textContent = code;
-    } else {
-      status.textContent = "No authorization code found in URL.";
-    }
+  <main>
+    <h1>TikTok OAuth Callback</h1>
+    <p id="status" class="callback-status">Reading authorization response…</p>
+
+    <p><strong>Authorization code</strong></p>
+    <pre id="code-box" class="callback-box" aria-live="polite"></pre>
+    <p>
+      Copy this code and paste it into
+      <code>python scripts/tiktok_oauth.py</code> on your computer.
+    </p>
+
+    <p id="error-label" hidden><strong class="error-text">Error</strong></p>
+    <pre id="error-box" class="callback-box error-text" hidden></pre>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <nav class="nav-legal" aria-label="Legal footer">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get("code");
+      var error = params.get("error");
+      var errorDesc = params.get("error_description") || params.get("error_reason");
+      var statusEl = document.getElementById("status");
+      var codeBox = document.getElementById("code-box");
+      var errorLabel = document.getElementById("error-label");
+      var errorBox = document.getElementById("error-box");
+
+      if (error) {
+        statusEl.textContent = "Authorization failed.";
+        errorLabel.hidden = false;
+        errorBox.hidden = false;
+        errorBox.textContent = error + (errorDesc ? ": " + errorDesc : "");
+        return;
+      }
+
+      if (code) {
+        statusEl.textContent = "Authorization successful. Copy the code below.";
+        codeBox.textContent = code;
+        return;
+      }
+
+      statusEl.textContent = "No authorization code found in URL.";
+      codeBox.textContent = "(waiting for redirect from TikTok)";
+    })();
   </script>
 </body>
 </html>

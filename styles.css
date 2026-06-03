@@ -1,0 +1,160 @@
+/* Bio: Shared styles for KitUp legal / TikTok developer site (GitHub Pages) */
+
+:root {
+  --bg: #0f1419;
+  --surface: #1a2332;
+  --text: #e7ecf3;
+  --muted: #9aa8b8;
+  --accent: #6eb5ff;
+  --border: #2a3a4f;
+  --max: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.site-header-inner,
+main,
+.site-footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.nav-legal a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-legal a:hover {
+  color: var(--accent);
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  color: var(--text);
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.links-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-grid li {
+  margin: 0.5rem 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.site-footer .nav-legal a {
+  font-weight: 500;
+}
+
+.contact {
+  margin-top: 1rem;
+}
+
+.legal-doc .updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.legal-doc ul {
+  padding-left: 1.25rem;
+}
+
+.callback-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  word-break: break-all;
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+}
+
+.callback-status {
+  margin: 1rem 0;
+}
+
+.error-text {
+  color: #f87171;
+}
