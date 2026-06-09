@@ -9,7 +9,7 @@ Official website for the **KitUp** TikTok / Meta developer app review.
 | Field | URL |
 |-------|-----|
 | **App name (Basic Info)** | `KitUp` |
-| **App icon (Basic Info)** | Upload `app-icon.svg` exported as **1024×1024 PNG** (same file as favicon) |
+| **App icon (Basic Info)** | Upload **`KitUpLogo.png`** (or a **1024×1024** square crop of the K icon) — must match favicon on the site |
 | **Website URL** | `https://bilalgurkansanli.github.io/kitup-legal/` |
 | **Privacy Policy URL** | `https://bilalgurkansanli.github.io/kitup-legal/privacy.html` |
 | **Terms of Service URL** | `https://bilalgurkansanli.github.io/kitup-legal/terms.html` |
@@ -19,8 +19,8 @@ Official website for the **KitUp** TikTok / Meta developer app review.
 
 ## Before resubmit
 
-1. Export `app-icon.svg` → PNG 1024×1024 and upload to TikTok **Basic Info → App icon**.
-2. Verify favicon + header logo match that icon on all pages.
+1. Upload **`KitUpLogo.png`** (or matching square icon PNG) to TikTok **Basic Info → App icon**.
+2. Verify favicon + header logo use `KitUpLogo.png` on all pages.
 3. **Verify URL properties** for Website, Privacy, and Terms (Production).
 4. Demo video must open **index.html** (KitUp home), not the OAuth callback page.
 
