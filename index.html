@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KitUp — Book Summary Media</title>
-  <meta name="description" content="KitUp produces immersive English book-summary videos and audio for YouTube, podcast, and social platforms." />
+  <title>KitUp — Official Website</title>
+  <meta name="description" content="KitUp is an English book-summary media project. Official website for app information, privacy policy, and terms of service." />
+  <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="app-icon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="logo" href="index.html">KitUp</a>
+      <a class="logo" href="index.html">
+        <img class="logo-icon" src="app-icon.svg" alt="" width="32" height="32" />
+        <span>KitUp</span>
+      </a>
       <nav class="nav-legal" aria-label="Legal">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
@@ -19,27 +24,50 @@
   </header>
 
   <main>
-    <h1>KitUp</h1>
+    <div class="hero-brand">
+      <img class="hero-brand-icon" src="app-icon.svg" alt="KitUp app icon" width="64" height="64" />
+      <div>
+        <h1>KitUp</h1>
+        <p class="site-tagline">Official website for the KitUp application</p>
+      </div>
+    </div>
+
     <p class="lead">
-      KitUp is a personal media project that creates slow, immersive book summaries in English
-      and publishes them to video and audio channels.
+      KitUp creates slow, immersive English book summaries and publishes them to YouTube,
+      podcast feeds, Instagram Reels, and TikTok. This site describes the KitUp service,
+      legal policies, and developer integration details.
     </p>
 
     <section class="card">
-      <h2>What we publish</h2>
+      <h2>About KitUp</h2>
+      <p>
+        KitUp is operated by Bilal Şanlı as a personal media automation project.
+        The application generates narration, visuals, and short-form clips from curated
+        book scripts, then publishes finished videos to connected social accounts through
+        official platform APIs.
+      </p>
+      <p>
+        KitUp is not a public consumer signup product. There is no user registration on
+        this website. Content is published only to channels owned and authorized by the operator.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Services</h2>
       <ul>
-        <li>Long-form book summary videos on YouTube</li>
-        <li>Short-form clips for YouTube Shorts, Instagram Reels, and TikTok</li>
-        <li>English podcast episodes (RSS)</li>
+        <li>Long-form YouTube book summary videos (English)</li>
+        <li>YouTube Shorts, Instagram Reels, and TikTok clips</li>
+        <li>English podcast episodes via public RSS</li>
+        <li>Automated publishing through YouTube, Meta, and TikTok developer APIs</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2>Channels</h2>
+      <h2>Channels &amp; content</h2>
       <ul class="links-grid">
         <li>
           <a href="https://www.youtube.com/" rel="noopener noreferrer">YouTube</a>
-          — book summary videos (operator channel)
+          — KitUp book summary channel
         </li>
         <li>
           <a href="https://bilalgurkansanli.github.io/kitup-podcast/feed_en.xml" rel="noopener noreferrer">Podcast (RSS)</a>
@@ -49,29 +77,21 @@
     </section>
 
     <section class="card">
-      <h2>Automation &amp; APIs</h2>
-      <p>
-        Content is produced with a private automation pipeline on the operator&apos;s own
-        infrastructure. KitUp uses official platform APIs (including
-        <a href="https://developers.tiktok.com/" rel="noopener noreferrer">TikTok for Developers</a>)
-        only to publish media to accounts authorized by the operator.
-        This website documents the project for app review and legal transparency; it does not
-        offer public sign-up or login.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Legal</h2>
-      <p>Privacy and terms are linked in the header and footer of every page on this site.</p>
+      <h2>Legal &amp; policies</h2>
+      <p>Privacy Policy and Terms of Service are linked in the header and footer of every page.</p>
       <ul class="links-grid">
         <li><a href="privacy.html">Privacy Policy</a></li>
         <li><a href="terms.html">Terms of Service</a></li>
       </ul>
     </section>
 
-    <p class="contact">
-      Contact: <a href="mailto:bilalsanli129@gmail.com">bilalsanli129@gmail.com</a>
-    </p>
+    <section class="card">
+      <h2>Contact</h2>
+      <p>
+        Questions about KitUp, this website, or API integrations:
+        <a href="mailto:bilalsanli129@gmail.com">bilalsanli129@gmail.com</a>
+      </p>
+    </section>
   </main>
 
   <footer class="site-footer">

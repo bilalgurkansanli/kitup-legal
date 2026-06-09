@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KitUp — TikTok OAuth Callback</title>
+  <title>KitUp — Authorization Complete</title>
+  <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="app-icon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header-inner">
-      <a class="logo" href="index.html">KitUp</a>
+      <a class="logo" href="index.html">
+        <img class="logo-icon" src="app-icon.svg" alt="" width="32" height="32" />
+        <span>KitUp</span>
+      </a>
       <nav class="nav-legal" aria-label="Legal">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
@@ -18,7 +23,12 @@
   </header>
 
   <main>
-    <h1>TikTok OAuth Callback</h1>
+    <div class="page-brand">
+      <img class="page-brand-icon" src="app-icon.svg" alt="KitUp app icon" width="48" height="48" />
+      <span class="page-brand-name">KitUp</span>
+    </div>
+
+    <h1>Authorization Complete</h1>
     <p id="status" class="callback-status">Reading authorization response…</p>
 
     <p><strong>Authorization code</strong></p>
@@ -30,6 +40,8 @@
 
     <p id="error-label" hidden><strong class="error-text">Error</strong></p>
     <pre id="error-box" class="callback-box error-text" hidden></pre>
+
+    <p><a href="index.html">Return to KitUp home</a></p>
   </main>
 
   <footer class="site-footer">
@@ -68,7 +80,7 @@
       }
 
       statusEl.textContent = "No authorization code found in URL.";
-      codeBox.textContent = "(waiting for redirect from TikTok)";
+      codeBox.textContent = "(waiting for redirect from authorization server)";
     })();
   </script>
 </body>

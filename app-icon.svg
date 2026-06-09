@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KitUp">
+  <rect width="512" height="512" rx="112" fill="#1a2332"/>
+  <rect x="96" y="128" width="320" height="256" rx="24" fill="#6eb5ff" opacity="0.15"/>
+  <path d="M176 160h160a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16H176a16 16 0 0 1-16-16V176a16 16 0 0 1 16-16z" fill="#6eb5ff"/>
+  <path d="M224 208h96v24h-96v-24zm0 48h72v24h-72v-24zm0 48h84v24h-84v-24z" fill="#0f1419"/>
+</svg>
